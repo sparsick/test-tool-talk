@@ -2,7 +2,7 @@ package com.github.sparsick.test.tool.database;
 
 import java.util.Objects;
 
-public class Person {
+public final class Person {
 
     private String firstName;
     private String lastName;
@@ -44,7 +44,6 @@ public class Person {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(firstName, lastName, jobTitle);
     }
 
