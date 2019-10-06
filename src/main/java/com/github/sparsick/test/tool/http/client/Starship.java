@@ -3,7 +3,7 @@ package com.github.sparsick.test.tool.http.client;
 import java.util.Map;
 import java.util.Objects;
 
-public class Starship {
+public final class Starship {
 
     private String name;
     private String model;
@@ -149,7 +149,6 @@ public class Starship {
         return Double.compare(starship.length, length) == 0 &&
                 crew == starship.crew &&
                 passengers == starship.passengers &&
-                cargoCapacity == starship.cargoCapacity &&
                 Double.compare(starship.hyperdriveRating, hyperdriveRating) == 0 &&
                 mglt == starship.mglt &&
                 Objects.equals(name, starship.name) &&
@@ -157,13 +156,13 @@ public class Starship {
                 Objects.equals(manufacturer, starship.manufacturer) &&
                 Objects.equals(costInCredits, starship.costInCredits) &&
                 Objects.equals(maxAtmospheringSpeed, starship.maxAtmospheringSpeed) &&
+                Objects.equals(cargoCapacity, starship.cargoCapacity) &&
                 Objects.equals(consumables, starship.consumables) &&
                 Objects.equals(starshipClass, starship.starshipClass);
     }
 
     @Override
     public int hashCode() {
-
         return Objects.hash(name, model, manufacturer, costInCredits, length, maxAtmospheringSpeed, crew, passengers, cargoCapacity, consumables, hyperdriveRating, mglt, starshipClass);
     }
 
