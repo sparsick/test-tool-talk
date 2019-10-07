@@ -1,5 +1,7 @@
 package com.github.sparsick.test.tool.database;
 
+import com.jparams.verifier.tostring.NameStyle;
+import com.jparams.verifier.tostring.ToStringVerifier;
 import nl.jqno.equalsverifier.EqualsVerifier;
 import nl.jqno.equalsverifier.Warning;
 import org.junit.jupiter.api.Test;
@@ -22,6 +24,13 @@ class PersonTest {
     void equalsContractMuchBetter(){
         EqualsVerifier.forClass(Person.class)
                 .suppress(Warning.NONFINAL_FIELDS).verify();
+    }
+
+    @Test
+    void toStringVerifier(){
+        ToStringVerifier.forClass(Person.class)
+                .withClassName(NameStyle.SIMPLE_NAME)
+                .verify();
     }
 
     private Person createPerson() {
