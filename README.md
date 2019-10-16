@@ -1,5 +1,5 @@
 # test-tool-talk
-You can find here the slides and the sample code of my talk "Ich packe meinen Testtoolkoffer und nehme mit ... - Testwerkzeuge für den Entwickleralltag" that I presented on JUG Schweiz in Zürich at 14th October 2019.
+You can find here the slides and the sample code of my talk "Ich packe meinen Testtoolkoffer und nehme mit ... - Testwerkzeuge für den Entwickleralltag" that I presented on JUG Schweiz in Bern at 16th October 2019.
 
 The code samples are tested with Java 11, embedded in a Spring Boot 2.1.8 skeleton.
 Following test libraries are used:
