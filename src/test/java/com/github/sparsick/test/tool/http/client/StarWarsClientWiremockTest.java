@@ -32,7 +32,7 @@ public class StarWarsClientWiremockTest {
     @ClassRule
     public static WireMockClassRule serviceMock = new WireMockClassRule(options().dynamicPort());
 
-    private StarWarsClient clientUnderTest = new StarWarsClient("http", "localhost", serviceMock.port());
+    private StarWarsClient clientUnderTest = new StarWarsClient("http://localhost:" + serviceMock.port());
     private String testData;
     private String testData2;
 
@@ -40,11 +40,11 @@ public class StarWarsClientWiremockTest {
     @BeforeClass
     public static void testDataSetup() throws IOException {
         try (InputStream inputStream = new ClassPathResource("starwars-testdata/starship1.json").getInputStream()) {
-            starship1TestDataTemplate = IOUtils.toString(inputStream, Charset.defaultCharset());
+            starship1TestDataTemplate = IOUtils.toString(inputStream, Charset.defaultCharset().toString());
         }
 
         try (InputStream inputStream = new ClassPathResource("starwars-testdata/starship2.json").getInputStream()) {
-            starship2TestDataTemplate = IOUtils.toString(inputStream, Charset.defaultCharset());
+            starship2TestDataTemplate = IOUtils.toString(inputStream, Charset.defaultCharset().toString());
         }
     }
 
