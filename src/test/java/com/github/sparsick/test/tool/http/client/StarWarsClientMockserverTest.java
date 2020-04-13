@@ -100,6 +100,14 @@ public class StarWarsClientMockserverTest {
                 .respond(response()
                         .withBody(starshipTestData)
                 );
+        mockServerClient
+                .when(request()
+                        .withMethod("GET")
+                        .withPath("/api/starships2")
+                )
+                .respond(response()
+                        .withBody(starshipTestData2)
+                );
 
         clientUnderTest.findAllStarships();
 
