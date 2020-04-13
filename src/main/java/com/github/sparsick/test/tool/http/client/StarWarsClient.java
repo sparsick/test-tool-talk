@@ -16,19 +16,10 @@ public class StarWarsClient {
     private final RestTemplate restTemplate;
     private final String baseUrl;
 
-    public StarWarsClient(String protocol, String hostName, int port) {
+    public StarWarsClient(String baseUrl) {
         this.restTemplate = new RestTemplateBuilder().build();
         try {
-            this.baseUrl = new URL(protocol, hostName, port, "").toString();
-        } catch (MalformedURLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public StarWarsClient(String protocol, String hostName) {
-        this.restTemplate = new RestTemplateBuilder().build();
-        try {
-            this.baseUrl = new URL(protocol, hostName,"").toString();
+            this.baseUrl = new URL(baseUrl).toString();
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }

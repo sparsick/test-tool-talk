@@ -18,6 +18,7 @@
 		<junit.jupiter.version>5.5.2</junit.jupiter.version>
         <testcontainers.version>1.12.2</testcontainers.version>
         <rest-assured.version>4.1.2</rest-assured.version>
+        <mockserver.version>5.10</mockserver.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>11</java.version>
@@ -99,7 +100,13 @@
         <dependency>
             <groupId>org.mock-server</groupId>
             <artifactId>mockserver-netty</artifactId>
-            <version>5.10</version>
+            <version>${mockserver.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mock-server</groupId>
+            <artifactId>mockserver-junit-jupiter</artifactId>
+            <version>${mockserver.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
