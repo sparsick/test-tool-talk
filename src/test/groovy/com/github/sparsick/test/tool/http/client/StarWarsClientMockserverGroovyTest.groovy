@@ -1,46 +1,35 @@
 package com.github.sparsick.test.tool.http.client
 
 import groovy.text.SimpleTemplateEngine
-import org.junit.Before
-import org.junit.BeforeClass
-import org.junit.Rule
-import org.junit.Test
+import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.extension.ExtendWith
 import org.mockserver.client.MockServerClient
-import org.mockserver.junit.MockServerRule
+import org.mockserver.junit.jupiter.MockServerExtension
 import org.mockserver.verify.VerificationTimes
 
 import static org.mockserver.model.HttpRequest.request
 import static org.mockserver.model.HttpResponse.response
 
+@ExtendWith(MockServerExtension.class)
 class StarWarsClientMockserverGroovyTest {
 
-    private static String starship1TestDataTemplate
-    private static String starship2TestDataTemplate
-    private String testData
-    private String testData2
-
-    @Rule
-    public MockServerRule mockServerRule = new MockServerRule(this, false)
-
     private MockServerClient mockServerClient
-    private StarWarsClient clientUnderTest = new StarWarsClient("http","localhost", mockServerRule.getPort())
+    private StarWarsClient clientUnderTest
 
-    @BeforeClass
-    static void "setup test data"()  {
-        starship1TestDataTemplate = StarWarsClient.class.getResourceAsStream("/starwars-testdata/starship1.json").text
-        starship2TestDataTemplate = StarWarsClient.class.getResourceAsStream("/starwars-testdata/starship2.json").text
+    StarWarsClientMockserverGroovyTest(MockServerClient mockServerClient) {
+        this.mockServerClient = mockServerClient
     }
 
-    @Before
+    @BeforeEach
     void "setup"() {
-        Map binding = new HashMap()
-        binding.put("baseUrl","localhost:" + mockServerRule.port)
-        testData = new SimpleTemplateEngine().createTemplate(starship1TestDataTemplate).make(binding).toString()
-        testData2 = new SimpleTemplateEngine().createTemplate(starship2TestDataTemplate).make(binding).toString()
+        clientUnderTest = new StarWarsClient("http://localhost:" + mockServerClient.remoteAddress().port)
     }
 
     @Test
     void "find all starships"() {
+        def testData = loadTestData("/starwars-testdata/starship1.json")
+        def testData2 = loadTestData("/starwars-testdata/starship2.json")
         mockServerClient
                 .when(request()
                         .withMethod("GET")
@@ -64,7 +53,9 @@ class StarWarsClientMockserverGroovyTest {
     }
 
     @Test
-    void "verify call for finding all starships"(){
+    void "verify call for finding all starships"() {
+        def testData = loadTestData("/starwars-testdata/starship1.json")
+        def testData2 = loadTestData("/starwars-testdata/starship2.json")
         mockServerClient
                 .when(request()
                         .withMethod("GET")
@@ -82,21 +73,25 @@ class StarWarsClientMockserverGroovyTest {
                         .withBody(testData2)
                 )
 
-        List<Starship> allStarships = clientUnderTest.findAllStarships()
-
-        assert allStarships.size() == 11
+        clientUnderTest.findAllStarships()
 
 
         mockServerClient
                 .verify(request()
-                                .withMethod("GET")
-                                .withPath("/api/starships"),
+                        .withMethod("GET")
+                        .withPath("/api/starships"),
                         VerificationTimes.once())
         mockServerClient
                 .verify(request()
-                                .withMethod("GET")
-                                .withPath("/api/starships2"),
+                        .withMethod("GET")
+                        .withPath("/api/starships2"),
                         VerificationTimes.once())
     }
 
+    String loadTestData(String jsonPath) {
+        def testData = StarWarsClient.class.getResourceAsStream(jsonPath).text
+
+        Map binding = ["baseUrl": "localhost:" + mockServerClient.remoteAddress().port]
+        new SimpleTemplateEngine().createTemplate(testData).make(binding).toString()
+    }
 }
