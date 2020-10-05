@@ -22,7 +22,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>11</java.version>
-    <groovy.version>3.0.4</groovy.version>
+    <groovy.version>3.0.5</groovy.version>
     </properties>
 
 	<dependencies>
@@ -62,7 +62,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.20</version>
+            <version>8.0.21</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
