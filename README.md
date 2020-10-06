@@ -1,19 +1,20 @@
 # test-tool-talk
 You can find here the slides and the sample code of my talk "Ich packe meinen Testtoolkoffer und nehme mit ... - Testwerkzeuge für den Entwickleralltag" that I presented on DWX Home remote at 1st July 2020.
 
-The code samples are tested with Java 11 and Groovy 3.0.4, embedded in a Spring Boot 2.3.1 skeleton.
+The code samples are tested with Java 11 and Groovy 3.0.5, embedded in a Spring Boot 2.3.4 skeleton.
 Following test libraries are used:
 - JUnit 5.6.2 including JUnit 4 (JUnit Jupiter Vintage)
 - Spock 2.0-M3
 - JavaFaker 1.0.2
 - AssertJ 3.16.1
+- AssertJ-DB 2.0.0
 - EqualsVerifier 3.3
 - To String Verifier 1.4.8
-- MockServer 5.10
-- Wiremock 2.26.3
+- MockServer 5.11.1
+- Wiremock 2.27.2
 - Greenmail 1.5.13
 - Testcontainers 1.14.3
-- REST assured 4.3.0
+- REST assured 4.3.1
 
 ## Tests should run under specific conditions
 The test class `ConditionalTestExecutionTest` shows how tests can be configured to run only if a specific condition is enabled.
@@ -26,6 +27,9 @@ The test class `PersonTestDataTest` demonstrates JavaFaker and how to use Object
 
 ## Verifing equals and hashCode contract and toString
 The test class `PersonTest` demonstrates how to verify the implementation of equals(), hashcode() and toString() methods with EqualsVerifier and ToStringVerifier.
+
+## Assertions
+Test package `com.github.sparsick.test.tool.assertion` demonstrate well readable assertions. 
 
 ## Simulate Infrastructure in Software Tests (Integrationtests)
 
