@@ -1,5 +1,5 @@
 # test-tool-talk
-You can find here the slides and the sample code of my talk "Ich packe meinen Testtoolkoffer und nehme mit ... - Testwerkzeuge für den Entwickleralltag" that I presented on JUG Oberpfalz remote at 7th October 2020.
+You can find here the slides and the sample code of my talk "Ich packe meinen Testtoolkoffer und nehme mit ... - Testwerkzeuge für den Entwickleralltag" that I presented on JCON Online remote at 27th October 2020.
 
 The code samples are tested with Java 11 and Groovy 3.0.5, embedded in a Spring Boot 2.3.4 skeleton.
 Following test libraries are used:
@@ -29,7 +29,7 @@ The test class `PersonTestDataTest` demonstrates JavaFaker and how to use Object
 The test class `PersonTest` demonstrates how to verify the implementation of equals(), hashcode() and toString() methods with EqualsVerifier and ToStringVerifier.
 
 ## Assertions
-Test package `com.github.sparsick.test.tool.assertion` demonstrate well readable assertions. 
+Test package `com.github.sparsick.test.tool.assertion` demonstrate well readable assertions.
 
 ## Simulate Infrastructure in Software Tests (Integrationtests)
 
