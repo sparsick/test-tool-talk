@@ -1,18 +1,18 @@
 # test-tool-talk
-You can find here the slides and the sample code of my talk "Ich packe meinen Testtoolkoffer und nehme mit ... - Testwerkzeuge für den Entwickleralltag" that I presented on JCON Online remote at 27th October 2020.
+You can find here the slides and the sample code of my talk "Ich packe meinen Testtoolkoffer und nehme mit ... - Testwerkzeuge für den Entwickleralltag" that I presented on W-JAX remote at 3rd November 2020.
 
-The code samples are tested with Java 11 and Groovy 3.0.5, embedded in a Spring Boot 2.3.4 skeleton.
+The code samples are tested with Java 11 and Groovy 3.0.6, embedded in a Spring Boot 2.3.5 skeleton.
 Following test libraries are used:
-- JUnit 5.6.2 including JUnit 4 (JUnit Jupiter Vintage)
+- JUnit 5.7.0 including JUnit 4 (JUnit Jupiter Vintage)
 - Spock 2.0-M3
 - JavaFaker 1.0.2
-- AssertJ 3.16.1
-- AssertJ-DB 2.0.0
-- EqualsVerifier 3.3
+- AssertJ 3.18.0
+- AssertJ-DB 2.0.2
+- EqualsVerifier 3.5
 - To String Verifier 1.4.8
 - MockServer 5.11.1
 - Wiremock 2.27.2
-- Greenmail 1.5.13
+- Greenmail 1.6.0
 - Testcontainers 1.14.3
 - REST assured 4.3.1
 
