@@ -23,6 +23,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>11</java.version>
         <groovy.version>3.0.6</groovy.version>
+        <greenmail.version>1.6.0</greenmail.version>
     </properties>
 
     <dependencies>
@@ -108,8 +109,14 @@
         </dependency>
         <dependency>
             <groupId>com.icegreen</groupId>
+            <artifactId>greenmail-junit5</artifactId>
+            <version>${greenmail.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.icegreen</groupId>
             <artifactId>greenmail</artifactId>
-            <version>1.6.0</version>
+            <version>${greenmail.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
