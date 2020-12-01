@@ -18,7 +18,7 @@
         <junit.jupiter.version>5.7.0</junit.jupiter.version>
         <testcontainers.version>1.14.3</testcontainers.version>
         <rest-assured.version>4.3.1</rest-assured.version>
-        <mockserver.version>5.11.1</mockserver.version>
+        <mockserver.version>5.11.2</mockserver.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>11</java.version>
