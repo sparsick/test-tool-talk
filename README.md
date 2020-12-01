@@ -1,5 +1,5 @@
 # test-tool-talk
-You can find here the slides and the sample code of my talk "Ich packe meinen Testtoolkoffer und nehme mit ... - Testwerkzeuge für den Entwickleralltag" that I presented on W-JAX remote at 3rd November 2020.
+You can find here the slides and the sample code of my talk "Ich packe meinen Testtoolkoffer und nehme mit ... - Testwerkzeuge für den Entwickleralltag" that I presented on Cyberland 2d at 3rd December 2020.
 
 The code samples are tested with Java 11 and Groovy 3.0.6, embedded in a Spring Boot 2.4.0 skeleton.
 Following test libraries are used:
