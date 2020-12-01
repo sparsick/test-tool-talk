@@ -15,6 +15,7 @@ Following test libraries are used:
 - Greenmail 1.6.0
 - Testcontainers 1.14.3
 - REST assured 4.3.1
+- Awaitility 4.0.3
 
 ## Tests should run under specific conditions
 The test class `ConditionalTestExecutionTest` shows how tests can be configured to run only if a specific condition is enabled.
@@ -29,7 +30,10 @@ The test class `PersonTestDataTest` demonstrates JavaFaker and how to use Object
 The test class `PersonTest` demonstrates how to verify the implementation of equals(), hashcode() and toString() methods with EqualsVerifier and ToStringVerifier.
 
 ## Assertions
-Test package `com.github.sparsick.test.tool.assertion` demonstrate well readable assertions.
+Test package `com.github.sparsick.test.tool.assertion` demonstrates well readable assertions.
+
+## Test with Concurrency
+Test package `com.github.sparsick.test.tool.concurrency` demonstrates how awaitility can help handling concurrency in tests.
 
 ## Simulate Infrastructure in Software Tests (Integrationtests)
 
