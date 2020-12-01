@@ -23,7 +23,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>11</java.version>
         <groovy.version>3.0.6</groovy.version>
-        <greenmail.version>1.6.0</greenmail.version>
+        <greenmail.version>1.6.1</greenmail.version>
     </properties>
 
     <dependencies>
