@@ -6,4 +6,11 @@ steps:
   image: maven:3.6.3-jdk-11
   commands:
   - mvn verify
- 
+  volumes:
+  - name: docker
+    path: /var/run/docker.sock
+
+volumes:
+- name: docker
+  host:
+    path: /var/run/docker.sock 
