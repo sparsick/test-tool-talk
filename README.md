@@ -1,6 +1,6 @@
 # test-tool-talk
 
-[![Build Status](https://cloud.drone.io/api/badges/sparsick/test-tool-talk/status.svg)](https://cloud.drone.io/sparsick/test-tool-talk)
+![Build Status](https://github.com/sparsick/test-tool-talk/workflows/MavenBuild/badge.svg)
 
 You can find here the slides and the sample code of my talk "Ich packe meinen Testtoolkoffer und nehme mit ... - Testwerkzeuge für den Entwickleralltag" that I presented on Cyberland 2d at 3rd December 2020.
 
