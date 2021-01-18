@@ -2,9 +2,9 @@
 
 ![Build Status](https://github.com/sparsick/test-tool-talk/workflows/MavenBuild/badge.svg)
 
-You can find here the slides and the sample code of my talk "Ich packe meinen Testtoolkoffer und nehme mit ... - Testwerkzeuge für den Entwickleralltag" that I presented on Cyberland 2d at 3rd December 2020.
+You can find here the slides and the sample code of my talk "Ich packe meinen Testtoolkoffer und nehme mit ... - Testwerkzeuge für den Entwickleralltag" that I presented on JUG Augsburg at 19th Januar 2021.
 
-The code samples are tested with Java 11 and Groovy 3.0.7, embedded in a Spring Boot 2.4.0 skeleton.
+The code samples are tested with Java 11 and Groovy 3.0.7, embedded in a Spring Boot 2.4.1 skeleton.
 Following test libraries are used:
 - JUnit 5.7.0 including JUnit 4 (JUnit Jupiter Vintage)
 - Spock 2.0-M4
@@ -16,8 +16,8 @@ Following test libraries are used:
 - MockServer 5.11.2
 - Wiremock 2.27.2
 - Greenmail 1.6.1
-- Testcontainers 1.15.0
-- REST assured 4.3.2
+- Testcontainers 1.15.1
+- REST assured 4.3.3
 - Awaitility 4.0.3
 
 ## Tests should run under specific conditions
