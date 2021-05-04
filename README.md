@@ -2,7 +2,7 @@
 
 ![Build Status](https://github.com/sparsick/test-tool-talk/workflows/MavenBuild/badge.svg)
 
-You can find here the slides and the sample code of my talk "Ich packe meinen Testtoolkoffer und nehme mit ... - Testwerkzeuge für den Entwickleralltag" that I presented on JUG Augsburg at 19th Januar 2021.
+You can find here the slides and the sample code of my talk "Ich packe meinen Testtoolkoffer und nehme mit ... - Testwerkzeuge für den Entwickleralltag" that I presented on Javaland Remote at 16h March 2021
 
 The code samples are tested with Java 11 and Groovy 3.0.7, embedded in a Spring Boot 2.4.1 skeleton.
 Following test libraries are used:
