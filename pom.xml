@@ -15,7 +15,7 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
-        <junit.jupiter.version>5.7.0</junit.jupiter.version>
+        <junit.jupiter.version>5.7.1</junit.jupiter.version>
         <testcontainers.version>1.15.2</testcontainers.version>
         <rest-assured.version>4.3.3</rest-assured.version>
         <mockserver.version>5.11.2</mockserver.version>
