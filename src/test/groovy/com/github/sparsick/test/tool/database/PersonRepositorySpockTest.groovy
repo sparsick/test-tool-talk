@@ -1,5 +1,6 @@
 package com.github.sparsick.test.tool.database
 
+import com.github.sparsick.test.tool.DatabaseProvider
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource
 import org.flywaydb.core.Flyway
@@ -11,7 +12,7 @@ import spock.lang.Specification
 class PersonRepositorySpockTest extends Specification {
 
 
-    private PostgreSQLContainer postgres = new PostgreSQLContainer();
+    private PostgreSQLContainer postgres = new PostgreSQLContainer(DatabaseProvider.POSTGRES.dockerImageName);
 
     private PersonRepository repositoryUnderTest;
 

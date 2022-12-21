@@ -6,11 +6,13 @@ import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
+import static com.github.sparsick.test.tool.DatabaseProvider.POSTGRES;
+
 @Testcontainers
 class DbMigrationJUnit5Test {
     
     @Container
-    public PostgreSQLContainer postgreSQLContainer = new PostgreSQLContainer();
+    public PostgreSQLContainer postgreSQLContainer = new PostgreSQLContainer(POSTGRES.getDockerImageName());
 
 
     @Test

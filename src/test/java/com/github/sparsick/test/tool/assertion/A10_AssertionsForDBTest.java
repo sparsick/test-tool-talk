@@ -1,6 +1,7 @@
 package com.github.sparsick.test.tool.assertion;
 
 
+import com.github.sparsick.test.tool.DatabaseProvider;
 import com.github.sparsick.test.tool.database.Person;
 import com.github.sparsick.test.tool.database.PersonRepository;
 import com.zaxxer.hikari.HikariConfig;
@@ -23,7 +24,7 @@ import static org.assertj.db.api.Assertions.assertThat;
 class A10_AssertionsForDBTest {
 
     @Container
-    private PostgreSQLContainer postgres = new PostgreSQLContainer();
+    private PostgreSQLContainer postgres = new PostgreSQLContainer(DatabaseProvider.POSTGRES.getDockerImageName());
 
     private PersonRepository repositoryUnderTest;
     private HikariDataSource dataSource;

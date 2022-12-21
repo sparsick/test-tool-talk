@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import javax.sql.DataSource;
 import java.util.List;
 
+import static com.github.sparsick.test.tool.DatabaseProvider.POSTGRES;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class PersonRepositoryJdbcUrlTestContainerTest {
@@ -19,7 +20,7 @@ public class PersonRepositoryJdbcUrlTestContainerTest {
     @BeforeEach
     void setup(){
         HikariConfig hikariConfig = new HikariConfig();
-        hikariConfig.setJdbcUrl("jdbc:tc:postgresql:9.6.8:///persondb");
+        hikariConfig.setJdbcUrl("jdbc:tc:postgresql:"+ POSTGRES.getVersion() +":///persondb");
         hikariConfig.setUsername("postgres");
         hikariConfig.setPassword("");
 

@@ -12,11 +12,13 @@ import org.testcontainers.containers.PostgreSQLContainer;
 
 import java.util.List;
 
+import static com.github.sparsick.test.tool.DatabaseProvider.POSTGRES;
+
 
 public class PersonRepositoryJUnit4Test {
 
     @Rule
-    public PostgreSQLContainer postgres = new PostgreSQLContainer();
+    public PostgreSQLContainer postgres = new PostgreSQLContainer(POSTGRES.getDockerImageName());
 
     private PersonRepository repositoryUnderTest;
 

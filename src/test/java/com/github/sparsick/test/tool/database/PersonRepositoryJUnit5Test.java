@@ -12,13 +12,14 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 
 import java.util.List;
 
+import static com.github.sparsick.test.tool.DatabaseProvider.POSTGRES;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Testcontainers
 class PersonRepositoryJUnit5Test {
 
     @Container
-    private PostgreSQLContainer postgres = new PostgreSQLContainer();
+    private PostgreSQLContainer postgres = new PostgreSQLContainer(POSTGRES.getDockerImageName());
 
     private PersonRepository repositoryUnderTest;
 
