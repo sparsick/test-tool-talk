@@ -27,7 +27,6 @@ import static com.github.tomakehurst.wiremock.client.WireMock.verify;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @WireMockTest
-@Disabled
 class StarWarsClientWiremockTest {
 
     private static String starship1TestDataTemplate;
