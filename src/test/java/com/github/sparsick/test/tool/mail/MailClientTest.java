@@ -5,16 +5,16 @@ import com.icegreen.greenmail.junit5.GreenMailExtension;
 import com.icegreen.greenmail.user.GreenMailUser;
 import com.icegreen.greenmail.util.GreenMailUtil;
 import com.icegreen.greenmail.util.ServerSetup;
+import jakarta.mail.Message;
+import jakarta.mail.MessagingException;
+import jakarta.mail.internet.MimeMessage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
-import org.springframework.util.SocketUtils;
+import org.springframework.test.util.TestSocketUtils;
 
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.internet.MimeMessage;
 import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
@@ -24,8 +24,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class MailClientTest {
 
-    private static final ServerSetup SERVER_SETUP_SMTP = new ServerSetup(SocketUtils.findAvailableTcpPort(), null, ServerSetup.PROTOCOL_SMTP);
-    private static final ServerSetup SERVER_SETUP_POP3 = new ServerSetup(SocketUtils.findAvailableTcpPort(), null, ServerSetup.PROTOCOL_POP3);
+    private static final ServerSetup SERVER_SETUP_SMTP = new ServerSetup(TestSocketUtils.findAvailableTcpPort(), null, ServerSetup.PROTOCOL_SMTP);
+    private static final ServerSetup SERVER_SETUP_POP3 = new ServerSetup(TestSocketUtils.findAvailableTcpPort(), null, ServerSetup.PROTOCOL_POP3);
 
     @RegisterExtension
     static GreenMailExtension greenMail = new GreenMailExtension(new ServerSetup[]{
