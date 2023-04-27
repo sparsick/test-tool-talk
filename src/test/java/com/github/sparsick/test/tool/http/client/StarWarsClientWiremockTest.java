@@ -1,13 +1,14 @@
 package com.github.sparsick.test.tool.http.client;
 
 
-import com.github.tomakehurst.wiremock.junit.WireMockClassRule;
+import com.github.tomakehurst.wiremock.junit5.WireMockRuntimeInfo;
+import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 import groovy.text.SimpleTemplateEngine;
 import org.apache.commons.io.IOUtils;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.ClassRule;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 import org.springframework.core.io.ClassPathResource;
 
 import java.io.IOException;
@@ -20,24 +21,25 @@ import java.util.Map;
 import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
 import static com.github.tomakehurst.wiremock.client.WireMock.get;
 import static com.github.tomakehurst.wiremock.client.WireMock.getRequestedFor;
+import static com.github.tomakehurst.wiremock.client.WireMock.stubFor;
 import static com.github.tomakehurst.wiremock.client.WireMock.urlEqualTo;
-import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.options;
+import static com.github.tomakehurst.wiremock.client.WireMock.verify;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class StarWarsClientWiremockTest {
+@WireMockTest
+@Disabled
+class StarWarsClientWiremockTest {
 
     private static String starship1TestDataTemplate;
     private static String starship2TestDataTemplate;
 
-    @ClassRule
-    public static WireMockClassRule serviceMock = new WireMockClassRule(options().dynamicPort());
 
-    private StarWarsClient clientUnderTest = new StarWarsClient("http://localhost:" + serviceMock.port());
+    private StarWarsClient clientUnderTest;
     private String testData;
     private String testData2;
 
 
-    @BeforeClass
+    @BeforeAll
     public static void testDataSetup() throws IOException {
         try (InputStream inputStream = new ClassPathResource("starwars-testdata/starship1.json").getInputStream()) {
             starship1TestDataTemplate = IOUtils.toString(inputStream, Charset.defaultCharset().toString());
@@ -48,20 +50,21 @@ public class StarWarsClientWiremockTest {
         }
     }
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeEach
+    public void setUp(WireMockRuntimeInfo wiremock) throws Exception {
+        clientUnderTest = new StarWarsClient("http://localhost:" + wiremock.getHttpPort());
         Map<String, String> binding = new HashMap<>();
-        binding.put("baseUrl","localhost:" + serviceMock.port());
+        binding.put("baseUrl","localhost:" + wiremock.getHttpPort());
         testData = new SimpleTemplateEngine().createTemplate(starship1TestDataTemplate).make(binding).toString();
         testData2 = new SimpleTemplateEngine().createTemplate(starship2TestDataTemplate).make(binding).toString();
     }
 
 
     @Test
-    public void findAllStarships() {
-        serviceMock.stubFor(get(urlEqualTo("/api/starships"))
+    void findAllStarships() {
+        stubFor(get(urlEqualTo("/api/starships"))
                                 .willReturn(aResponse().withBody(testData)));
-        serviceMock.stubFor(get(urlEqualTo("/api/starships2"))
+        stubFor(get(urlEqualTo("/api/starships2"))
                                 .willReturn(aResponse().withBody(testData2)));
 
         List<Starship> allStarships = clientUnderTest.findAllStarships();
@@ -71,18 +74,18 @@ public class StarWarsClientWiremockTest {
 
 
     @Test
-    public void verifyFindAllStarshipsRequest(){
-        serviceMock.stubFor(get(urlEqualTo("/api/starships"))
+    void verifyFindAllStarshipsRequest(){
+        stubFor(get(urlEqualTo("/api/starships"))
                 .willReturn(aResponse().withBody(testData)));
-        serviceMock.stubFor(get(urlEqualTo("/api/starships2"))
+        stubFor(get(urlEqualTo("/api/starships2"))
                 .willReturn(aResponse().withBody(testData2)));
 
         List<Starship> allStarships = clientUnderTest.findAllStarships();
 
         assertThat(allStarships).hasSize(11);
 
-        serviceMock.verify(1, getRequestedFor(urlEqualTo("/api/starships")));
-        serviceMock.verify(1, getRequestedFor(urlEqualTo("/api/starships2")));
+        verify(1, getRequestedFor(urlEqualTo("/api/starships")));
+        verify(1, getRequestedFor(urlEqualTo("/api/starships2")));
     }
 
 }

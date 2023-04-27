@@ -25,7 +25,7 @@ public class PersonRepositoryJdbcUrlTestContainerTest {
         hikariConfig.setPassword("");
 
         DataSource ds = new HikariDataSource(hikariConfig);
-        flyway = Flyway.configure().dataSource(ds).load();
+        flyway = Flyway.configure().dataSource(ds).cleanDisabled(false).load();
         flyway.migrate();
 
         repositoryUnderTest = new PersonRepository(ds);
