@@ -12,7 +12,7 @@ jobs:
   openjdk:
     name: "OpenJDK 17"
     runs-on: ubuntu-latest
-    container: "maven:3.6.3-jdk-17-slim"
+    container: "maven:3.6.3-openjdk-17-slim"
     steps:
       - uses: actions/checkout@v2
       - uses: actions/cache@v2
