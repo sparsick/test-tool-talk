@@ -107,9 +107,5 @@ class ConditionalTestExecutionTest {
 
 
     // More Conditions
-    // Script-based Conditions (experimental feature)
     // @EnabledIf or @DisabledIf annotation.
-    // Scripts can be written in JavaScript, Groovy, or any other scripting language
-    // for which there is support for the Java Scripting API, defined by JSR 223
-
 }
