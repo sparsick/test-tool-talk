@@ -1,7 +1,7 @@
 package com.github.sparsick.test.tool.testdata;
 
-import com.github.javafaker.Faker;
 import com.github.sparsick.test.tool.database.Person;
+import net.datafaker.Faker;
 import org.junit.jupiter.api.Test;
 
 class PersonTestDataTest {

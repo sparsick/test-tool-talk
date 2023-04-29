@@ -1,7 +1,8 @@
 package com.github.sparsick.test.tool.testdata;
 
-import com.github.javafaker.Faker;
+
 import com.github.sparsick.test.tool.database.Person;
+import net.datafaker.Faker;
 
 class PersonTestData { // ObjectMother pattern
     static Person newPersonWithoutJobTitle() {
