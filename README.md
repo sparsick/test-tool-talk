@@ -4,21 +4,21 @@
 
 You can find here the slides and the sample code of my talk "Ich packe meinen Testtoolkoffer und nehme mit ... - Testwerkzeuge für den Entwickleralltag" that I presented on JAX Remote at 5h May 2021
 
-The code samples are tested with Java 11 and Groovy 3.0.7, embedded in a Spring Boot 2.4.1 skeleton.
+The code samples are tested with Java 17 and Groovy 4.0.9, embedded in a Spring Boot 3.0.x skeleton.
 Following test libraries are used:
 - JUnit 5.7.1 including JUnit 4 (JUnit Jupiter Vintage)
-- Spock 2.0-M4
-- JavaFaker 1.0.2
-- AssertJ 3.19.0
+- Spock 2.0
+- DataFaker 1.9.0
+- AssertJ 3.24.2
 - AssertJ-DB 2.0.2
-- EqualsVerifier 3..5
+- EqualsVerifier 3.12
 - To String Verifier 1.4.8
-- MockServer 5.11.2
-- Wiremock 2.27.2
-- Greenmail 1.6.1
-- Testcontainers 1.15.2
-- REST assured 4.3.3
-- Awaitility 4.0.3
+- MockServer 5.14.
+- Wiremock 3.0.0-beta-8
+- Greenmail 2.0.0
+- Testcontainers 1.17.6
+- REST assured 5.2.1
+- Awaitility 4.2.0
 
 ## Tests should run under specific conditions
 The test class `ConditionalTestExecutionTest` shows how tests can be configured to run only if a specific condition is enabled.
