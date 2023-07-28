@@ -2,7 +2,7 @@
 
 ![Build Status](https://github.com/sparsick/test-tool-talk/workflows/MavenBuild/badge.svg)
 
-You can find here the slides and the sample code of my talk "Ich packe meinen Testtoolkoffer und nehme mit ... - Testwerkzeuge für den Entwickleralltag" that I presented on Hacktalk Remote at 2nd May 2023
+You can find here the slides and the sample code of my talk "Testing Tools in Java" that I presented on Star of Java Remote at 28th July 2023
 
 The code samples are tested with Java 17 and Groovy 4.0.9, embedded in a Spring Boot 3.0.x skeleton.
 Following test libraries are used:
