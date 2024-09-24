@@ -2,22 +2,22 @@
 
 ![Build Status](https://github.com/sparsick/test-tool-talk/workflows/MavenBuild/badge.svg)
 
-You can find here the slides and the sample code of my talk "Testing Tools in Java" that I presented on Star of Java Remote at 28th July 2023
+You can find here the slides and the sample code of my talk "Ich packe meinen Testtoolkoffer und nehme mit ..." that I presented on JUG Ostfalen at 26th September 2024
 
-The code samples are tested with Java 17 and Groovy 4.0.9, embedded in a Spring Boot 3.0.x skeleton.
+The code samples are tested with Java 21 and Groovy 4.x, embedded in a Spring Boot 3.1.x skeleton.
 Following test libraries are used:
-- JUnit 5.7.1 including JUnit 4 (JUnit Jupiter Vintage)
-- Spock 2.0
-- DataFaker 1.9.0
+- JUnit 5.9.3 including JUnit 4 (JUnit Jupiter Vintage)
+- Spock 2.3
+- DataFaker 2.0.1
 - AssertJ 3.24.2
 - AssertJ-DB 2.0.2
-- EqualsVerifier 3.12
+- EqualsVerifier 3.14.3
 - To String Verifier 1.4.8
-- MockServer 5.14.
-- Wiremock 3.0.0-beta-8
+- MockServer 5.15.0
+- Wiremock 3.0.0-beta-10
 - Greenmail 2.0.0
-- Testcontainers 1.17.6
-- REST assured 5.2.1
+- Testcontainers 1.18.3
+- REST assured 
 - Awaitility 4.2.0
 
 ## Tests should run under specific conditions
