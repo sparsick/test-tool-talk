@@ -10,9 +10,9 @@ on:
 
 jobs:
   openjdk:
-    name: "OpenJDK 17"
+    name: "OpenJDK 21"
     runs-on: ubuntu-latest
-    container: "maven:3.9.1-eclipse-temurin-17-alpine"
+    container: "maven:3.9.9-eclipse-temurin-21"
     steps:
       - uses: actions/checkout@v2
       - uses: actions/cache@v2
