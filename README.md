@@ -1,3 +1,5 @@
+⚠️ **This repository is moved to https://codeberg.org/sparsick/test-tool-talk** ⚠️
+
 # test-tool-talk
 
 ![Build Status](https://github.com/sparsick/test-tool-talk/workflows/MavenBuild/badge.svg)
