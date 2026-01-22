@@ -21,7 +21,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>21</java.version>
-        <greenmail.version>2.0.0</greenmail.version>
+        <greenmail.version>2.0.1</greenmail.version>
     </properties>
 
     <dependencies>
